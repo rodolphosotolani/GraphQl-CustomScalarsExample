@@ -20,15 +20,24 @@ public class CustomScalarsApplication {
     @Bean
     CommandLineRunner commandLineRunner(Faker faker, ProductRepository repository) {
         return args -> {
-            List<Product> products = List.of(Product.builder().title(faker.commerce().productName()).build(),
-                    Product.builder().title(faker.commerce().productName()).build(),
-                    Product.builder().title(faker.commerce().productName()).build(),
-                    Product.builder().title(faker.commerce().productName()).build(),
-                    Product.builder().title(faker.commerce().productName()).build(),
-                    Product.builder().title(faker.commerce().productName()).build());
+            List<Product> products = List.of(getNewProject(faker),
+                    getNewProject(faker),
+                    getNewProject(faker),
+                    getNewProject(faker),
+                    getNewProject(faker),
+                    getNewProject(faker));
 
             repository.saveAll(products);
         };
+    }
+
+    private static Product getNewProject(Faker faker) {
+        return Product
+                .builder()
+                .title(faker.commerce().productName())
+                .isOnSale(faker.random().nextBoolean())
+                .weight(faker.random().nextFloat())
+                .build();
     }
 
     @Bean
