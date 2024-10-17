@@ -28,6 +28,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'net.datafaker:datafaker:2.3.0'
+    //SCALARS - DEFINE NOVOS TIPOS SUPORTADOS NO GRAPHQL
+    implementation 'com.graphql-java:graphql-java-extended-scalars:20.2'
+    //SCALARS LOCAL DATE TIME - ADICIONA LOCALDATETIME AOS SCALARS DA APLICACAO
+    implementation 'com.tailrocks.graphql:graphql-datetime-spring-boot-starter:6.0.0'
 
     compileOnly 'org.projectlombok:lombok'
 
