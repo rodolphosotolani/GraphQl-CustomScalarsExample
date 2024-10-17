@@ -20,4 +20,8 @@ public class Product {
 
     private String title;
 
+    private Boolean isOnSale;
+
+    private Float weight;
+
 }
