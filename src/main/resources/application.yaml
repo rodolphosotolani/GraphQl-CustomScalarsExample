@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: CustomScalars
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+  docker:
+    compose:
+      lifecycle-management: start_and_stop
