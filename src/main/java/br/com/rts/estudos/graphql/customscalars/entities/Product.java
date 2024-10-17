@@ -5,6 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
@@ -23,5 +26,9 @@ public class Product {
     private Boolean isOnSale;
 
     private Float weight;
+
+    private BigDecimal price;
+
+    private LocalDateTime dateCreated;
 
 }
